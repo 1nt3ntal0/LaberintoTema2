@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: e2c41bb29faf58d4c8543cbf7ae5aae3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - nuevoSonido: {fileID: 8300000, guid: 0e3d2dd400d381448afa0eafa2b33ba1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
