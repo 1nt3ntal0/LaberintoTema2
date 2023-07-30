@@ -2,25 +2,24 @@ using UnityEngine;
 
 public class Atraparte : MonoBehaviour
 {
-    public AudioClip nuevoSonido; // Nuevo sonido que se reproducirá cuando el Player esté dentro del área
+    public AudioClip nuevoSonido; 
     private AudioSource audioSource;
     private AudioClip originalClip;
 
-    private bool isInArea;
+    private bool Tocando;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         originalClip = audioSource.clip;
-        isInArea = false;
+        Tocando = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Cambio"))
         {
-            isInArea = true;
-            // Cambiar el clip del AudioSource y reproducir el nuevo sonido
+            Tocando = true;
             audioSource.clip = nuevoSonido;
             audioSource.Play();
         }
@@ -30,8 +29,7 @@ public class Atraparte : MonoBehaviour
     {
         if (other.CompareTag("Cambio"))
         {
-            isInArea = false;
-            // Restaurar el clip original del AudioSource y reproducirlo
+            Tocando = false;
             audioSource.clip = originalClip;
             audioSource.Play();
         }
