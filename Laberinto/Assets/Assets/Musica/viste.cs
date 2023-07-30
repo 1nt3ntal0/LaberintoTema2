@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class viste : MonoBehaviour
 {
-    public AudioClip nuevoSonido; // Nuevo sonido que se reproducirá cuando el Player esté dentro del área
+    public AudioClip nuevoSonido;
     private bool isInArea;
     private bool hasPlayedNewSound;
 
     private void OnTriggerEnter(Collider other)
     {
+        int Contador=0;
+        if (Contador == 0)
+        {
         if (other.CompareTag("Player") && !hasPlayedNewSound)
         {
             isInArea = true;
@@ -21,6 +24,8 @@ public class viste : MonoBehaviour
                 hasPlayedNewSound = true;
             }
         }
+        Contador ++;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -33,7 +38,7 @@ public class viste : MonoBehaviour
             if (playerAudioSource != null)
             {
                 // Restaurar el clip original del AudioSource del "Player" y reproducirlo
-                playerAudioSource.clip = null; // Opcionalmente, podrías volver a asignar el clip original si lo tienes almacenado.
+                playerAudioSource.clip = null; // Opcionalmente, podrï¿½as volver a asignar el clip original si lo tienes almacenado.
                 playerAudioSource.Play();
             }
             hasPlayedNewSound = false;
