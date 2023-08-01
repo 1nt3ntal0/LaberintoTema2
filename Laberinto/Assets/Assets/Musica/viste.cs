@@ -5,12 +5,10 @@ public class viste : MonoBehaviour
     public AudioClip nuevoSonido;
     private bool isInArea;
     private bool hasPlayedNewSound;
-    int Contador=0;
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Contador == 0)
-        {
         if (other.CompareTag("Player") && !hasPlayedNewSound)
         {
             isInArea = true;
@@ -21,8 +19,6 @@ public class viste : MonoBehaviour
                 playerAudioSource.Play();
                 hasPlayedNewSound = true;
             }
-        }
-        Contador ++;
         }
     }
 

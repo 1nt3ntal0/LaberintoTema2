@@ -8,9 +8,6 @@ public class tedije : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        int Contador = 0 ;
-        if (Contador == 0)
-        {
         if (other.CompareTag("Player") && !hasPlayedNewSound)
         {
             isInArea = true;
@@ -22,8 +19,6 @@ public class tedije : MonoBehaviour
                 playerAudioSource.Play();
                 hasPlayedNewSound = true;
             }
-        }
-        Contador ++;
         }
     }
 
